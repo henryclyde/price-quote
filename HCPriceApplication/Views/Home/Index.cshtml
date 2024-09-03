@@ -1,0 +1,37 @@
+﻿@model Quotation //include class quotation from the models folder
+@{
+    ViewData["Title"] = "Henry's Price Quotation";
+}
+
+
+<form asp-action="Index" method="post">
+    <!-- form returns index with post request -->
+    <div class="form-group row">
+        <label asp-for="Subtotal" class="col-sm-3">Subtotal:</label> <!-- class set to col-sm-3 -->
+        <div class="col-sm-4"> <!-- class set to col-sm-4 -->
+            <input asp-for="Subtotal" class="form-control" /> <!-- class set to form-control -->
+        </div>
+        <span asp-validation-for="Subtotal" class="col-sm text-danger"></span> <!-- summary/error shown in text-danger style -->
+    </div>
+    <div class="row form-group">
+        <label asp-for="Discount" class="col-sm-3">Discount percent:</label> <!-- discount label -->
+        <div class="col-sm-4"><!-- class set to col-sm-4 -->
+            <input asp-for="Discount" class="form-control" /> <!-- class set to form-control -->
+        </div>
+        <span asp-validation-for="Discount" class="col-sm text-danger"></span> <!-- summary/error shown in text-danger style -->
+    </div>
+    <div class="form-group row"><!-- class set to form-group row-->
+        <label class="col-sm-3">Discount amount:</label> <!-- discount label, class set to col-sm-3 -->
+        <div class="col-sm-4">@ViewBag.Discount.ToString("C2")</div> <!-- discount value, class set to col-sm-4 -->
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3">Total:</label> <!-- total label, class set to col-sm-3 -->
+        <div class="col-sm-4">@ViewBag.Total.ToString("C2")</div><!-- total value, class set to col-sm-4 -->
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-success" type="submit">Calculate</button>  <!-- calculate button-->
+            <a class="btn btn-success ml-2" asp-action="Index">Clear</a>  <!-- clear button/option -->
+        </div>
+    </div>
+</form>

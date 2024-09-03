@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /> <!--Link tag referencing bootstrap first-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha-long-hash_code" crossorigin="anonymous"><!--Link tag referencing fontawesome second-->
+    <link href="~/css/site.css" rel="stylesheet" /> <!--Link tag referencing site.css last-->
+</head>
+<body class="container">
+    <header class="jumbotron bg-success text-center pt-4 pb-4">
+        <h1 class="display-4 text-white"><i class="fa-solid fa-money-bill-wave"></i> Henry's Price Quotation</h1>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
